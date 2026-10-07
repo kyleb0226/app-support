@@ -1,0 +1,50 @@
+:root {
+  --bg: #f4f5f8;
+  --card: #ffffff;
+  --text: #15171c;
+  --muted: #5b6170;
+  --line: #e2e5ec;
+  --accent: #ff6a2b;
+}
+:root[data-app="ultaminder"] { --accent: #1e90e8; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e1015; --card: #171a21; --text: #eef0f5; --muted: #9aa1b2; --line: #2a2f3a; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+header img { width: 72px; height: 72px; border-radius: 16px; }
+header h1 { margin: 0; font-size: 28px; letter-spacing: -0.02em; }
+header p { margin: 2px 0 0; color: var(--muted); }
+nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+nav a {
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--text); text-decoration: none; font-size: 15px; font-weight: 600;
+}
+nav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+section {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  padding: 4px 22px; margin-bottom: 16px;
+}
+h2 { font-size: 19px; margin: 18px 0 6px; }
+h3 { font-size: 16px; margin: 16px 0 4px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); font-size: 15px; }
+a { color: var(--accent); }
+ul { padding-left: 20px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 16px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.apps { display: grid; gap: 12px; }
+.app { display: flex; gap: 14px; align-items: center; text-decoration: none; color: var(--text);
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px; }
+.app img { width: 56px; height: 56px; border-radius: 13px; }
+.app strong { display: block; font-size: 18px; }
+.app span { color: var(--muted); font-size: 15px; }
+footer { color: var(--muted); font-size: 14px; margin-top: 24px; }
